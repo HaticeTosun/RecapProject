@@ -2,7 +2,6 @@ package pageObjectModel;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.Driver;
@@ -22,6 +21,7 @@ public class AbstractClass {
 
         wait.until( ExpectedConditions.elementToBeClickable( clickButton ) );
         clickButton.click();
+
     }
 
     //   create a reusable method for sendkeys functionality
@@ -30,6 +30,7 @@ public class AbstractClass {
         wait.until( ExpectedConditions.visibilityOf( sendKeysButton ) );
         sendKeysButton.sendKeys( value );
     }
+
     public int randomNum(int max){
 
         Random rnd = new Random(  );
@@ -47,9 +48,17 @@ public class AbstractClass {
         clickFunctionality( listOfElements.get( rnd ) );
 
     }
-    public void switchWindows(){
-        Set<String>windows= driver.getWindowHandles() ;
-        for (String)
+
+    public void switchWindow(){
+
+        Set<String> windows=  driver.getWindowHandles();
+
+        for(String myWin:windows){
+            driver.switchTo().window( myWin );
+            System.out.println(driver.getCurrentUrl());
+
+        }
+
     }
 
 

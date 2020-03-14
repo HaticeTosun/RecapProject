@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class homePage extends AbstractClass{
+  class homePage extends AbstractClass{
 
     WebDriver driver = Driver.getDriver();
 
@@ -28,4 +28,5 @@ public class homePage extends AbstractClass{
     public void clickOnButtonSearch(){
         clickFunctionality( buttonSearch );
     }
+
 }

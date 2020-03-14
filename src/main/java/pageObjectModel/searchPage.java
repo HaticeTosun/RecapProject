@@ -9,17 +9,24 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class searchPage extends AbstractClass {
+public class searchPage extends AbstractClass{
+
     WebDriver driver = Driver.getDriver();
+
     public searchPage(){
-        PageFactory.initElements(driver ,this);
+
+        PageFactory.initElements( driver , this );
 
     }
+
     @FindAll({
             @FindBy(xpath = "//img[contains(@class,'width-full wt-height-full display-block position-absolute ')]")
     })
     private List<WebElement> products;
+
     public void clickAnyProducts(){
-        clickAnyProducts(products);
+        clickRandomNum( products );
+        switchWindow();
     }
+
 }

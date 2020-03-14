@@ -1,23 +1,25 @@
 package stepDefinition;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjectModel.homePage;
+import pageObjectModel.searchPage;
 import utilities.Driver;
 import utilities.readProperties;
 
-public class addToCart {
+class addToCartSteps {
+
     WebDriver driver = Driver.getDriver();
     homePage homePage = new homePage();
+    searchPage searchPage = new searchPage();
 
     @Given("^Navigate to website$")
     public void navigate_to_website() {
         driver.get( readProperties.getData( "URL" ) );
         driver.manage().window().maximize();
-
     }
 
     @And("^Search for \"([^\"]*)\"$")
@@ -32,11 +34,20 @@ public class addToCart {
 
     @And("^Click on any item$")
     public void click_on_any_item() {
-
+        searchPage.clickAnyProducts();
     }
 
     @And("^Fill all the required fields$")
     public void fill_all_the_required_fields() {
+
+//        get the count of the dropdown and inputs
+
+//        click randomly on dropdown and type random text
+
+//          click on add to cart button
+
+//        verify the title
+
 
     }
 
@@ -51,7 +62,4 @@ public class addToCart {
     }
 
 
-    @And("^Verify I'm in the cart$")
-    public void verifyIMInTheCart() {
-    }
 }
